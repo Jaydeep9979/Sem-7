@@ -1,0 +1,12 @@
+r = imread("wrinkle_face.jpg");
+face = r(75:400,200:500,:);
+subplot(1,2,1);
+imshow(face);
+title("Wrinkled face");
+s = uint8(zeros(size(face)));
+s(:,:,1) = antiaging(face(:,:,1));
+s(:,:,2) = antiaging(face(:,:,2));
+s(:,:,3) = antiaging(face(:,:,3));
+subplot(1,2,2);
+imshow(s);
+title("wrinkleless face");
